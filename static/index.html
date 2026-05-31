@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to JSON Converter | Glassmorphism</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-panel">
+            <header class="header">
+                <div class="icon-container">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <i class="fa-solid fa-arrow-right-arrow-left arrow-icon"></i>
+                    <i class="fa-solid fa-file-code"></i>
+                </div>
+                <h1>PDF to JSON Converter</h1>
+                <p>Upload your CAP round PDF to extract a structured JSON. <br> Large files may take a few minutes. You can close this tab and come back later!</p>
+            </header>
+
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="fileInput" accept="application/pdf" hidden>
+                <div class="upload-content">
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                    <h3>Drag & Drop your PDF here</h3>
+                    <p>or <span class="browse-link">browse files</span></p>
+                </div>
+            </div>
+
+            <div class="status-area" id="statusArea" style="display: none;">
+                <div class="file-info">
+                    <i class="fa-solid fa-file-pdf text-red"></i>
+                    <span id="fileNameDisplay" class="file-name">document.pdf</span>
+                </div>
+                
+                <div class="progress-container" id="progressContainer">
+                    <div class="loader-container">
+                        <div class="loader"></div>
+                        <span id="statusText">Uploading...</span>
+                    </div>
+                    <p class="hint-text">Processing may take a while. Your task is saved in the background.</p>
+                </div>
+
+                <div class="error-container" id="errorContainer" style="display: none;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span id="errorMessage">An error occurred.</span>
+                </div>
+
+                <div class="success-container" id="successContainer" style="display: none;">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Conversion Complete!</span>
+                    <a href="#" id="downloadBtn" class="download-btn">
+                        <i class="fa-solid fa-download"></i> Download JSON
+                    </a>
+                    <button id="resetBtn" class="reset-btn">Convert Another File</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
