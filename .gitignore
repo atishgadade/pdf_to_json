@@ -1,3 +1,7 @@
-uploads/
 __pycache__/
+*.pyc
+uploads/
+*.pdf
 *.json
+!college_districts.json
+!render.yaml
